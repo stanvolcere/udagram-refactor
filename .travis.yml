@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-frontend ./frontend
+  - docker build -t udagram-frontend ./udagram-frontend
   - docker tag udagram-frontend stanvolcere/udagram-frontend:latest
   - docker --version # print the version for logging
   - docker build -t udagram-users ./users
