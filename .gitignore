@@ -44,3 +44,4 @@ venv/
 # custom
 set_env.sh
 udagram-api/
+infra

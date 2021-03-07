@@ -8,6 +8,7 @@ import bodyParser from 'body-parser';
 import { config } from './config/config';
 import { V0_USER_MODELS } from './controllers/v0/model.index';
 
+console.log(process.env.JWT_SECRET);
 
 (async () => {
 	await sequelize.addModels(V0_USER_MODELS);
