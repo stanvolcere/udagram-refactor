@@ -33,7 +33,7 @@ console.log(process.env.JWT_SECRET);
 
 	// Root URI call
 	app.get('/', async (req, res) => {
-		res.send('/api/v0/');
+		res.send('/api/v0/users');
 	});
 
 
