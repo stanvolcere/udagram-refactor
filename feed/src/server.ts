@@ -1,5 +1,7 @@
 import cors from 'cors';
 import express from 'express';
+import { v4 as uuidv4 } from 'uuid';
+
 import { sequelize } from './sequelize';
 
 import { IndexRouter } from './controllers/v0/index.router';
@@ -33,9 +35,19 @@ import { V0_FEED_MODELS } from './controllers/v0/model.index';
 
 	// Root URI call
 	app.get('/', async (req, res) => {
-		res.send('/api/v0/feed');
+		res.send('Response from Feed service');
 	});
 
+	// Root URI call
+	app.get('/logs/:username', async (req, res) => {
+		let { username } = req.params;
+		let pid = uuidv4();
+		console.log(new Date().toLocaleString() + `: ${pid} requested from ${username}`);
+
+		res.send('Response from Feed service logging tool');
+
+		console.log(new Date().toLocaleString() + `: ${pid} Finished processing request from ${username}`);
+	});
 
 	// Start the Server
 	app.listen(port, () => {
